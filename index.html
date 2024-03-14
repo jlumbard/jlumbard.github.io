@@ -23,13 +23,8 @@
 		    window.amplitude.init("3c8a294fee66577f924eb4930e29394b");
 		
 		    // Initialize Session Replay Plugin
-		    const sessionReplayTracking = window.sessionReplay.plugin();
+		    const sessionReplayTracking = window.sessionReplay.plugin({0.99});
 		    window.amplitude.add(sessionReplayTracking);
-		
-		    // Configure Session Replay (example with a 1% sample rate)
-		    sessionReplayTracking.init("3c8a294fee66577f924eb4930e29394b", {
-		      sampleRate: 0.99
-		    });
 		  </script>
 
 
