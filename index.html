@@ -21,6 +21,11 @@
 		});
 		const sessionReplayTracking = window.sessionReplay.plugin();
 		window.amplitude.add(sessionReplayTracking);
+		// This configuration samples 1% of all sessions
+		await sessionReplayTracking.init("3c8a294fee66577f924eb4930e29394b", {
+		  sampleRate: 1.00
+		}).promise;
+
 		</script>
 
 
