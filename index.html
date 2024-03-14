@@ -10,19 +10,19 @@
 		<script>posthog.capture('$pageview')
 		</script>
 
-    <!-- Include the Amplitude SDK -->
-    <script src="https://cdn.amplitude.com/libs/amplitude-8.0.0-min.gz.js"></script>
-    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.0.2-min.js.gz"></script>
-    <script>
-        // Initialize Amplitude with your API key
-        amplitude.getInstance().init("3c8a294fee66577f924eb4930e29394b");
+		<script src="https://cdn.amplitude.com/libs/analytics-browser-2.1.3-min.js.gz"></script>
+		<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.0.2-min.js.gz"></script>
+		<script>
 
-        // Load the Session Replay Plugin
-        const sessionReplayTracking = amplitude.getSessionReplay().plugin();
+		amplitude.init("3c8a294fee66577f924eb4930e29394b", null, {
+		    defaultTracking: {
+		        sessions: true
+		    }
+		});
+		const sessionReplayTracking = window.sessionReplay.plugin();
+		window.amplitude.add(sessionReplayTracking);
+		</script>
 
-        // Add the Session Replay Plugin to Amplitude
-        amplitude.getInstance().add(sessionReplayTracking);
-    </script>
 
 
 
