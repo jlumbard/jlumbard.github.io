@@ -2,14 +2,14 @@
 	<head>
 		<script src="https://cdn.jsdelivr.net/npm/@statsig/js-client@latest/build/statsig-js-client.min.js"></script>
 		<script>
-			import { StatsigClient } from '@statsig/js-client'
 			
+			const Statsig = require("statsig-js");
 			
-			await statsig.initialize( 
+			// initialize returns a promise which always resolves
+			await Statsig.initialize(
 			  "client-kuq0aeB1ZwUEEGPTT6MfJs4i1epQwaB50VJSW9mryLZ",
-			  { userID: "user-id" },
+			  { userID: "some_user_id" }} // optional, pass options here if needed
 			);
-			statsig.checkGate("test_1")
 		</script>
 		<link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet" type="text/css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
