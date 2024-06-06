@@ -183,8 +183,12 @@
 	posthog.onFeatureFlags(function() {
 		posthog.setPersonPropertiesForFlags({'$browser': 'value'})
 	    if (posthog.isFeatureEnabled('my_feature_flag')) {
+		    console.log('FF true')
 	        document.getElementsByTagName('body')[0].style.backgroundColor = "red";
 	    }
+		else{
+			console.log('FF fasle')
+		}
 });
 
 </script>
