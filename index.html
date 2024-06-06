@@ -178,6 +178,23 @@
 	</body>
 </html>
 
+<script>
+	posthog.setPersonPropertiesForFlags({'$browser': 'value'})
+	// Ensure flags are loaded before usage.
+	// You'll only need to call this on the code for when the first time a user visits.
+	posthog.onFeatureFlags(function() {
+	    // feature flags should be available at this point
+	    if (posthog.isFeatureEnabled('my_feature_flag') ) {
+		document.getElementsByTagName('body')[0].style.backgroundColor = "red";
+	    }
+	})
+	
+	// Otherwise, you can just do:
+	if (posthog.isFeatureEnabled('my_feature_flag') ) {
+	    // do something
+	}
+</script>
+
 <style>
 
 a{
